@@ -306,23 +306,23 @@ odds: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-> ## Turn a String Into a List
+> ## Transforme uma string em uma lista
 >
-> Use a for-loop to convert the string "hello" into a list of letters:
+> Use um loop for para converter a string "hello" em uma lista de letras:
 >
 > ~~~
 > ["h", "e", "l", "l", "o"]
 > ~~~
 > {: .language-python}
 >
-> Hint: You can create an empty list like this:
+> Dica: Você pode criar uma lista vazia como esta:
 >
 > ~~~
 > my_list = []
 > ~~~
 > {: .language-python}
 >
-> > ## Solution
+> > ## Solução
 > > ~~~
 > > my_list = []
 > > for char in "hello":
