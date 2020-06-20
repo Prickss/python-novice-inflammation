@@ -306,7 +306,7 @@ odds: [1, 3, 5, 7]
 ~~~
 {: .output}
 
-> ## Transforme uma string em uma lista
+> ## Transforme uma String em uma Lista
 >
 > Use um loop for para converter a string "hello" em uma lista de letras:
 >
@@ -333,9 +333,9 @@ odds: [1, 3, 5, 7]
 > {: .solution}
 {: .challenge}
 
-Subsets of lists and strings can be accessed by specifying ranges of values in brackets,
-similar to how we accessed ranges of positions in a NumPy array.
-This is commonly referred to as "slicing" the list/string.
+Subconjunto de listas e strings podem ser acessados especificando intervalos de valores entre colchetes,
+semelhante à maneira como acessamos intervalos de posições em uma matriz NumPy.
+Isso é geralmente chamado de "fatiar" a lista/string.
 
 ~~~
 binomial_name = "Drosophila melanogaster"
@@ -362,9 +362,9 @@ last: 4
 ~~~
 {: .output}
 
-> ## Slicing From the End
+> ## Fatiando a Partir do Final
 >
-> Use slicing to access only the last four characters of a string or entries of a list.
+> Use o fatiamento para acessar apenas os últimos quatro caracteres de uma string ou entradas de uma lista.
 >
 > ~~~
 > string_for_slicing = "Observation date: 02-Feb-2013"
@@ -382,15 +382,15 @@ last: 4
 > ~~~
 > {: .output}
 >
-> Would your solution work regardless of whether you knew beforehand
-> the length of the string or list
-> (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
-> If not, try to change your approach to make it more robust.
+> Sua solução funcionaria independentemente de você saber o 
+> comprimento da string ou lista
+> (Por exemplo, se você quisesse aplicar a solução  a um conjunto de listas de comprimentos diferentes)?
+> Caso contrário, tente alterar sua abordagem para torná-la mais robusta.
 >
-> Hint: Remember that indices can be negative as well as positive
+> Dica: Lembre-se que índices podem ser negativos e positivos.
 >
-> > ## Solution
-> > Use negative indices to count elements from the end of a container (such as list or string):
+> > ## Soluçao
+> > Use índices negativos para contar os elementos a partir do final do contêiner (como lista ou sequência):
 > >
 > > ~~~
 > > string_for_slicing[-4:]
