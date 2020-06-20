@@ -497,29 +497,29 @@ print(numpy.mean(data, axis=1))
 which is the average inflammation per patient across all days.
 
 
-> ## Slicing Strings
+> ## Fatiando strings
 >
-> A section of an array is called a [slice]({{ page.root }}/reference/#slice).
-> We can take slices of character strings as well:
+> Uma parte de um array é chamado de _fatia_—em inglês, [slice]({{ page.root }}/reference/#slice).
+> Podemos obter fatias de sequências de caracteres (_strings_) também:
 >
 > ~~~
 > element = 'oxygen'
-> print('first three characters:', element[0:3])
-> print('last three characters:', element[3:6])
+> print('primeiros três caracteres:', element[0:3])
+> print('últimos três caracteres:', element[3:6])
 > ~~~
 > {: .language-python}
 >
 > ~~~
-> first three characters: oxy
-> last three characters: gen
+> primeiros três caracteres: oxy
+> últimos três caracteres: gen
 > ~~~
 > {: .output}
 >
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
+> Qual o valor de `element[:4]`?
+> E de `element[4:]`?
+> Ou `element[:]`?
 >
-> > ## Solution
+> > ## Resposta
 > > ~~~
 > > oxyg
 > > en
@@ -528,10 +528,10 @@ which is the average inflammation per patient across all days.
 > > {: .output}
 > {: .solution}
 >
-> What is `element[-1]`?
-> What is `element[-2]`?
+> O que é `element[-1]`?
+> O que é `element[-2]`?
 >
-> > ## Solution
+> > ## Resposta
 > > ~~~
 > > n
 > > e
@@ -539,49 +539,49 @@ which is the average inflammation per patient across all days.
 > > {: .output}
 > {: .solution}
 >
-> Given those answers,
-> explain what `element[1:-1]` does.
+> Dadas essas respostas,
+> explique o que `element[1:-1]` faz.
 >
-> > ## Solution
-> > Creates a substring from index 1 up to (not including) the final index,
-> > effectively removing the first and last letters from 'oxygen'
+> > ## Resposta
+> > Cria uma substring do index 1 até o index final (exclusive),
+> > removendo efetivamente a primeira e última letra de 'oxygen'
 > {: .solution}
 >
-> How can we rewrite the slice for getting the last three characters of `element`,
-> so that it works even if we assign a different string to `element`?
-> Test your solution with the following strings: `carpentry`, `clone`, `hi`. 
+> Como podemos reescrever o slice para obter os últimos três caracteres de `element`,
+> de forma que funcione mesmo se atribuírmos uma string diferente para `element`?
+> Teste sua solução com as seguintes strings de valores: `carpentry`, `clone`, `hi`. 
 >
-> > ## Solution
+> > ## Resposta
 > > ~~~
 > > element = 'oxygen'
-> > print('last three characters:', element[-3:])
+> > print('últimos três caracteres:', element[-3:])
 > > element = 'carpentry'
-> > print('last three characters:', element[-3:])
+> > print('últimos três caracteres:', element[-3:])
 > > element = 'clone'
-> > print('last three characters:', element[-3:])
+> > print('últimos três caracteres:', element[-3:])
 > > element = 'hi'
-> > print('last three characters:', element[-3:])
+> > print('últimos três caracteres:', element[-3:])
 > > ~~~
 > > {: .language-python}
 > > ~~~
-> > last three characters: gen
-> > last three characters: try
-> > last three characters: one
-> > last three characters: hi
+> > últimos três caracteres: gen
+> > últimos três caracteres: try
+> > últimos três caracteres: one
+> > últimos três caracteres: hi
 > > ~~~
 > > {: .output}
 > {: .solution}
 {: .challenge}
 
-> ## Thin Slices
+> ## Fatias Finas
 >
-> The expression `element[3:3]` produces an [empty string]({{ page.root }}/reference/#empty-string),
-> i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
+> O comando `element[3:3]` produz uma [string vazia]({{ page.root }}/reference/#empty-string),
+> i.e., uma string que não contém caracteres.
+> Se `data` contém nosso array de dados de pacientes,
+> o que `data[3:3, 4:4]` produz?
+> E `data[3:3, :]`?
 >
-> > ## Solution
+> > ## Resposta
 > > ~~~
 > > array([], shape=(0, 0), dtype=float64)
 > > array([], shape=(0, 40), dtype=float64)
@@ -590,10 +590,10 @@ which is the average inflammation per patient across all days.
 > {: .solution}
 {: .challenge}
 
-> ## Stacking Arrays
+> ## Empilhando Arrays
 >
-> Arrays can be concatenated and stacked on top of one another,
-> using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacking, respectively.
+> Arrays podem ser concatenados e empilhados um em cima do outro,
+> usando as funções do NumPy `vstack` e `hstack` para empilhar verticalmente e horizontalmente, respectivamente.
 >
 > ~~~
 > import numpy
@@ -631,18 +631,19 @@ which is the average inflammation per patient across all days.
 > ~~~
 > {: .output}
 >
-> Write some additional code that slices the first and last columns of `A`,
-> and stacks them into a 3x2 array.
-> Make sure to `print` the results to verify your solution.
+> Escreva um código adicional que obtém a primeira e última colunas de `A`,
+> e a empilha em um array com dimensão 3x2.
+> Tenha certeza de usar `print` em seus resultados para verificar sua solução.
 >
-> > ## Solution
+> > ## Resposta
 > >
-> > A 'gotcha' with array indexing is that singleton dimensions
-> > are dropped by default. That means `A[:, 0]` is a one dimensional
-> > array, which won't stack as desired. To preserve singleton dimensions,
-> > the index itself can be a slice or array. For example, `A[:, :1]` returns
-> > a two dimensional array with one singleton dimension (i.e. a column
-> > vector).
+> > Uma "pegadinha" com indexação de arrays é que dimensões unitárias
+> > (dimensões de valor 1, chamadas em inglês de _singleton dimensions_)
+> > são descartadas por padrão. Isso significa que `A[:, 0]` é um array 
+> > unidimensional, que não irá empilhar como desejado. Para preservar dimensões unitárias,
+> > o índice em si pode ser um slice ou array. Por exemplo, `A[:, :1]` retorna
+> > um array de duas dimensões com uma dimensão unitárias(i.e. um vetor
+> > de coluna).
 > >
 > > ~~~
 > > D = numpy.hstack((A[:, :1], A[:, -1:]))
@@ -660,10 +661,10 @@ which is the average inflammation per patient across all days.
 > > {: .output}
 > {: .solution}
 >
-> > ## Solution
+> > ## Resultado
 > >
-> > An alternative way to achieve the same result is to use Numpy's
-> > delete function to remove the second column of A.
+> > Outra maneira de obter o mesmo resultado é utilizar a função
+> > `delete` do Numpy para remover a segunda coluna de A.
 > >
 > > ~~~
 > > D = numpy.delete(A, 1, 1)
@@ -682,17 +683,17 @@ which is the average inflammation per patient across all days.
 > {: .solution}
 {: .challenge}
 
-> ## Change In Inflammation
+> ## Mudança em Inflamação
 >
-> The patient data is _longitudinal_ in the sense that each row represents a
-> series of observations relating to one individual.  This means that
-> the change in inflammation over time is a meaningful concept.
-> Let's find out how to calculate changes in the data contained in an array
-> with NumPy.
+> O dado do paciente é _longitudinal_ de forma que cada linha representa uma
+> série de observações em relação a um indivíduo. Isso significa que
+> a mudança na inflamação ao longo do tempo é um conceito significativo.
+> Vamos descobrir como calcular as mudanças nos dados contidos em um array
+> com NumPy.
 >
-> The `numpy.diff()` function takes an array and returns the differences
-> between two successive values. Let's use it to examine the changes
-> each day across the first week of patient 3 from our inflammation dataset.
+> A função `numpy.diff()` utiliza um array e retorna as diferenças
+> entre dois valores sucessivos. Vamos usá-lo para examinar as mudanças
+> em cada dia da primeira semana do paciente 3 de nosso dataset de inflamação.
 > 
 > ~~~
 > patient3_week1 = data[3, :7]
@@ -705,14 +706,14 @@ which is the average inflammation per patient across all days.
 > ~~~
 > {: .output}
 >
-> Calling `numpy.diff(patient3_week1)` would do the following calculations
+>  Chamar `numpy.diff(patient3_week1)` faria os seguintes cálculos:
 >
 > ~~~
 > [ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]
 > ~~~
 > {: .language-python}
 >
-> and return the 6 difference values in a new array.
+> e retorna os seis valores de diferença em um novo array. 
 >
 > ~~~
 > numpy.diff(patient3_week1)
@@ -724,17 +725,17 @@ which is the average inflammation per patient across all days.
 > ~~~
 > {: .output}
 >
-> Note that the array of differences is shorter by one element (length 6).
+> Observe que o array com as diferenças é menor em um elemento (tamanho 6).
 >
-> When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may
-> be passed to the function to specify which axis to process. When applying 
-> `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?
+> Quando usar `numpy.diff` com um array multidimensional, um argumento `axis` pode
+> fornecido para especificar qual eixo deve ser processado. Quando aplicamos
+> `numpy.diff` ao nosso array 2D de inflamação `data`, qual eixo deveríamos especificar?
 >
-> > ## Solution
-> > Since the row axis (0) is patients, it does not make sense to get the
-> > difference between two arbitrary patients. The column axis (1) is in
-> > days, so the difference is the change in inflammation -- a meaningful
-> > concept.
+> > ## Resposta
+> > Já que o eixo linha (0) é pacientes, não faz sentido em utilizar as
+> > diferenças entre dois pacientes arbitrários. O eixo coluna (1) é em
+> > dias, então a diferença é a mudança na inflamação -- um conceito
+> > significativo.
 > >
 > > ~~~
 > > numpy.diff(data, axis=1)
@@ -742,21 +743,21 @@ which is the average inflammation per patient across all days.
 > > {: .language-python}
 > {: .solution}
 >
-> If the shape of an individual data file is `(60, 40)` (60 rows and 40
-> columns), what would the shape of the array be after you run the `diff()`
-> function and why?
+> Se o tamanho de um dataset é `(60, 40)` (60 linhas e 40
+> colunas), qual seria o tamanho de um array depois utilizar a função `diff()`
+> e por quê?
 >
-> > ## Solution
-> > The shape will be `(60, 39)` because there is one fewer difference between
-> > columns than there are columns in the data.
+> > ## Resposta
+> > O tamanho será `(60, 39)` porque há uma diferença a menos entre
+> > colunas do que colunas nos dados.
 > {: .solution}
 >
-> How would you find the largest change in inflammation for each patient? Does
-> it matter if the change in inflammation is an increase or a decrease?
+> Como você encontraria a maior mudança em inflamação para cada paciente? 
+> Importa se a mudança na inflamação é um aumento ou diminuição? 
 >
-> > ## Solution
-> > By using the `numpy.max()` function after you apply the `numpy.diff()`
-> > function, you will get the largest difference between days.
+> > ## Resposta
+> > Usando a função `numpy.max()` após utilizar a função
+> > `numpy.diff()`, você irá obter a maior diferença entre dias.
 > >
 > > ~~~
 > > numpy.max(numpy.diff(data, axis=1), axis=1)
@@ -773,13 +774,13 @@ which is the average inflammation per patient across all days.
 > > ~~~
 > > {: .language-python}
 > >
-> > If inflammation values *decrease* along an axis, then the difference from
-> > one element to the next will be negative. If
-> > you are interested in the **magnitude** of the change and not the
-> > direction, the `numpy.absolute()` function will provide that.
+> > Se os valores de inflamação *diminuem* ao longo do eixo, então a diferença de
+> > um elemento para o próximo será negativa. Se
+> > você está interessada na **magnitude** da mudança e não na
+> > direção, a função `numpy.absolute()` irá fornecer isto.
 > >
-> > Notice the difference if you get the largest _absolute_ difference
-> > between readings.
+> > Observe a diferença se você obtiver a maior diferença absoluta
+> > entre as leituras.
 > >
 > > ~~~
 > > numpy.max(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
