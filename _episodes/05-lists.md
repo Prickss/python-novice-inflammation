@@ -400,16 +400,16 @@ last: 4
 > {: .solution}
 {: .challenge}
 
-> ## Non-Continuous Slices
+> ## Fatias não Contínuas
 >
-> So far we've seen how to use slicing to take single blocks
-> of successive entries from a sequence.
-> But what if we want to take a subset of entries
-> that aren't next to each other in the sequence?
+> Até agora vimos como usar o fatiamento para obter blocos únicos de entradas 
+> sucessivas de uma sequência.
+> Mas e se quisermos obter um subconjunto de entradas
+> que não estão próximos um do outro na sequência?
 >
-> You can achieve this by providing a third argument
-> to the range within the brackets, called the _step size_.
-> The example below shows how you can take every third entry in a list:
+> Você pode conseguir isso fornecendo um terceiro argumento
+> para o intervalo entre colchetes, chamado de _passo_.
+> O exemplo abaixo mostra como é possível obter cada terceira entrada da lista:
 >
 > ~~~
 > primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
@@ -423,10 +423,10 @@ last: 4
 > ~~~
 > {: .output}
 >
-> Notice that the slice taken begins with the first entry in the range,
-> followed by entries taken at equally-spaced intervals (the steps) thereafter.
-> If you wanted to begin the subset with the third entry,
-> you would need to specify that as the starting point of the sliced range:
+> Observe que a fatia obtida começa com o primeiro argumento do range,
+> seguido por entradas em intervalos igualmente espaçados (os passos) em seguida.
+> Se você deseja iniciar o subconjunto com o terceiro argumento,
+> precisará especificar isso como o ponto inicial do intervalo fatiado:
 >
 > ~~~
 > primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
@@ -440,8 +440,8 @@ last: 4
 > ~~~
 > {: .output}
 >
-> Use the step size argument to create a new string
-> that contains only every other character in the string
+> Use o argumento do tamanho de passo para criar uma nova string
+> que contenha um a cada dois caracteres da string
 > "In an octopus's garden in the shade"
 >
 > ~~~
@@ -455,17 +455,17 @@ last: 4
 > {: .output}
 >
 > > ## Solution
-> > To obtain every other character you need to provide a slice with the step
-> > size of 2:
+> > Para obter um a cada dois caracteres você precisa fornecer uma fatia 
+> > de tamanho 2:
 > >
 > > ~~~
 > > beatles[0:35:2]
 > > ~~~
 > > {: .language-python}
 > >
-> > You can also leave out the beginning and end of the slice to take the whole string
-> > and provide only the step argument to go every second
-> > element:
+> > Você pode deixar de fora o início e o final da fatia para pegar a string inteira
+> > e fornecer apenas o argumento para cada dois 
+> > elementos:
 > >
 > > ~~~
 > > beatles[::2]
@@ -474,8 +474,7 @@ last: 4
 > {: .solution}
 {: .challenge}
 
-If you want to take a slice from the beginning of a sequence, you can omit the first index in the
-range:
+Se você deseja obter uma fatia do início da sequência, você pode omitir o primeiro índice do range:
 
 ~~~
 date = "Monday 4 January 2016"
@@ -492,8 +491,7 @@ Omitting beginning index: Monday
 ~~~
 {: .output}
 
-And similarly, you can omit the ending index in the range to take a slice to the very end of the
-sequence:
+Da mesma forma, você pode omitir o índice final no intervalo para obter uma fatia até o final da sequência: 
 
 ~~~
 months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
