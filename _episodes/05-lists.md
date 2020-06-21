@@ -384,7 +384,7 @@ last: 4
 >
 > Sua solução funcionaria independentemente de você saber o 
 > comprimento da string ou lista
-> (Por exemplo, se você quisesse aplicar a solução  a um conjunto de listas de comprimentos diferentes)?
+> (por exemplo, se você quisesse aplicar a solução  a um conjunto de listas de comprimentos diferentes)?
 > Caso contrário, tente alterar sua abordagem para torná-la mais robusta.
 >
 > Dica: Lembre-se que índices podem ser negativos e positivos.
@@ -426,7 +426,7 @@ last: 4
 > Observe que a fatia obtida começa com o primeiro argumento do range,
 > seguido por entradas em intervalos igualmente espaçados (os passos) em seguida.
 > Se você deseja iniciar o subconjunto com o terceiro argumento,
-> precisará especificar isso como o ponto inicial do intervalo fatiado:
+> precisará especificar isso como ponto inicial do intervalo fatiado:
 >
 > ~~~
 > primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
@@ -454,7 +454,7 @@ last: 4
 > ~~~
 > {: .output}
 >
-> > ## Solution
+> > ## Solução
 > > Para obter um a cada dois caracteres você precisa fornecer uma fatia 
 > > de tamanho 2:
 > >
@@ -511,11 +511,11 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 ~~~
 {: .output}
 
-> ## Overloading
+> ## Sobrecarga
 >
-> `+` usually means addition, but when used on strings or lists, it means "concatenate".
-> Given that, what do you think the multiplication operator `*` does on lists?
-> In particular, what will be the output of the following code?
+> `+` geralmente significa adição, mas quando usado em strings e listas, significa "concatenar".
+> Dado isso, o que você acha que o operador de multiplicação `*` faz em uma lista?
+> Em particular, qual será a saída do código a seguir?
 >
 > ~~~
 > counts = [2, 4, 6, 8, 10]
@@ -529,14 +529,14 @@ Omitting ending index: ["sep", "oct", "nov", "dec"]
 > 3.  `[[2, 4, 6, 8, 10],[2, 4, 6, 8, 10]]`
 > 4.  `[2, 4, 6, 8, 10, 4, 8, 12, 16, 20]`
 >
-> The technical term for this is *operator overloading*:
-> a single operator, like `+` or `*`,
-> can do different things depending on what it's applied to.
+> O termo técnico para isto é *sobrecarga de operadores*:
+> um único operador, como `+` ou `*`,
+> pode fazer coisas diferentes dependendo de aonde for aplicado.
 >
-> > ## Solution
+> > ## Solução
 > >
-> > The multiplication operator `*` used on a list replicates elements of the list and concatenates
-> > them together:
+> > O operador de multiplicação `*` usado em uma lista, replica os elementos da lista e os concatena 
+> > juntos:
 > >
 > > ~~~
 > > [2, 4, 6, 8, 10, 2, 4, 6, 8, 10]
