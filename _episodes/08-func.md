@@ -652,7 +652,7 @@ readable code!
 > "Adicionar" duas strings produz sua concatenação:
 > `'a' + 'b'` é `'ab'`.
 > Escreva uma função chamada `fence` que use dois parâmetros chamados `original` e `wrapper`
-> e retorne uma nova string que contenha os caractéres de wrapper no início e no fim da original.
+> e retorne uma nova string que contenha os caracteres de wrapper no início e no fim do original.
 > A chamada da sua função deve ser assim:
 >
 > ~~~
@@ -678,7 +678,7 @@ readable code!
 >
 > Note que `return` e `print` não são intercambiáveis.
 > `print` é uma função Python que *exibe* dados na tela.
-> Permite que nós, *users*, vejamos os dados.
+> Permite que nós, *usuários*, vejamos os dados.
 > A instrução `return`, por outro lado, torna os dados visíveis ao programa.
 > Vamos dar uma olhada na seguinte função:
 >
@@ -697,8 +697,8 @@ readable code!
 >
 > > ## Solução
 > > O Python executará primeiro a função `add` com `a = 7` e `b = 3`,
-> > e, então, exibir `10`. No entanto, como a função `add` não tem uma
-> > ma linha que se inicia com `return` (sem "instrução" `return`), ela irá, por padrão, retornar
+> > e então, exibirá `10`. No entanto, como a função `add` não tem uma
+> > linha que se inicia com `return` (sem "instrução" `return`), ela irá, por padrão, retornar
 > > nada, que, no mundo Python, é chamado `None`. Portanto, `A` será atribuído a `None`
 > > e a última linha (`print(A)`) exibirá `None`. Como resultado, veremos:
 > > ~~~
@@ -768,7 +768,7 @@ readable code!
 > > ~~~
 > > '''Recebe um array como entrada e retorna um array correspondente
 > > dimensionado para que 0 corresponda ao valor mínimo e 1 ao
-> > valormáximo do array de entrada.
+> > valor máximo do array de entrada.
 > >
 > > Exemplo:
 > > >>> rescale(numpy.arange(10.0))
@@ -784,8 +784,8 @@ readable code!
 
 > ## Definindo Padrões
 >
-> Reescreva a função `rescale` para que ela dimensione os dados para ficar entre `0.0` e `1.0` por padrão,
-> mas que permita que o chamador especifique o limite inferior e superior, se desejar.
+> Reescreva a função `rescale` para que ela dimensione os dados para ficar entre `0.0` e `1.0` por
+> padrão, mas que permita que o chamador especifique o limite inferior e superior, se desejar.
 > Compare sua implementação com a de seu vizinho:
 > As duas funções sempre se comportam da mesma maneira?
 >
@@ -888,7 +888,7 @@ readable code!
 
 > ## O Velho Troca Troca
 >
-> Considere o código::
+> Considere o código:
 >
 > ~~~
 > a = 3
